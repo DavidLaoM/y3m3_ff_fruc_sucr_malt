@@ -192,7 +192,6 @@ end
 if setup.GLKinhibFRC == 0
     v_GLK=p.HXK_ExprsCor.*(((p.HXK1_kcatglc.*(f.HXK1+f.HXK2))./(p.HXK1_Katp.*p.HXK1_Kglc).*(ATP.*GLCi - ((ADP.*G6P)./p.HXK1_Keqglc)))./...
         ((1 + ATP./p.HXK1_Katp + ADP./p.HXK1_Kadp).*(1 + GLCi./p.HXK1_Kglc + G6P./p.HXK1_Kg6p + T6P./p.HXK1_Kit6p)));
-
 % Inhibition by fructose taken into account
 elseif setup.GLKinhibFRC == 1
     GLKinhibFRC = FRCi/p.HXK1_KiFRC;
@@ -208,7 +207,6 @@ if (setup.GPdataset.Fruc == 1) || (setup.GPdataset.Sucr == 1)
     if setup.FRKinhibGLC == 0
         v_FRK=p.HXK_ExprsCor.*(((p.HXK1_kcatfrc.*(f.HXK1+f.HXK2))./(p.HXK1_Katp.*p.HXK1_Kfrc).*(ATP.*FRCi - ((ADP.*F6P)./p.HXK1_Keqfrc)))./...
             ((1 + ATP./p.HXK1_Katp + ADP./p.HXK1_Kadp).*(1 + FRCi./p.HXK1_Kfrc + F6P./p.HXK1_Kf6p + T6P./p.HXK1_Kit6p)));
-        
     % Inhibition by glucose taken into account
     elseif setup.FRKinhibGLC == 1
         FRKinhibGLC = GLCi/p.HXK1_KiGLC;
